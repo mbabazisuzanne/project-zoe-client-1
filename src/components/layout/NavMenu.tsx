@@ -26,11 +26,6 @@ interface IProps {
 
 const routes = [
     {
-        name: "Dashboard",
-        route: localRoutes.dashboard,
-        icon: AppsIcon
-    },
-    {
         name: "People",
         icon: PeopleIcon,
         items: [
@@ -52,15 +47,7 @@ const routes = [
             {
                 name: "Users",
                 route: localRoutes.users
-            },
-            {
-                name: "User Groups",
-                route: localRoutes.usersGroups
-            },
-            {
-                name: "Settings",
-                route: localRoutes.settings
-            },
+            }
         ]
     },
     {
