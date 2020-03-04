@@ -1,6 +1,6 @@
 import React from 'react';
 import * as yup from "yup";
-import {reqDate, reqEmail, reqString} from "../../data/validations";
+import {reqDate, reqString} from "../../data/validations";
 import {genderCategories,ageCategories} from "../../data/comboCategories";
 import {FormikActions} from "formik";
 import Grid from "@material-ui/core/Grid";
@@ -48,8 +48,8 @@ const NewContactForm = ({data, done}: IProps) => {
                 gender: values.gender,
                 ageGroup: values.ageGroup,
                 placeOfWork: values.placeOfWork,
-                cellGroupId: values.cellGroup.id,
-                churchLocationId: values.churchLocation.id,
+                //cellGroupId: values.cellGroup.id, @TODO Temporarily disable this
+                //churchLocationId: values.churchLocation.id,
             },
             phones: [
                 {
@@ -80,7 +80,7 @@ const NewContactForm = ({data, done}: IProps) => {
         }
         post(remoteRoutes.contacts, toSave,
             (data) => {
-                Toast.info('Operation successful')
+                Toast.info('New contact saved successfully')
                 actions.resetForm()
                 dispatch({
                     type: crmConstants.crmAddContact,
@@ -185,23 +185,7 @@ const NewContactForm = ({data, done}: IProps) => {
                         name="cellGroup"
                         label="Missional Community"
                     />
-                </Grid>             
-                <Grid item xs={12}>
-                    <XRemoteSelect
-                        name="workplace"
-                        label="Workplace"
-                        remote={remoteRoutes.contactsPerson}
-                        parser={({id, name}: any): ISelectOpt => ({id, label: name})}
-                    />                
-                </Grid>                
-                <Grid item xs={12}>
-                    <XRemoteSelect
-                        name="residence"
-                        label="Residence"
-                        remote={remoteRoutes.contactsPerson}
-                        parser={({id, name}: any): ISelectOpt => ({id, label: name})}
-                    />                   
-                </Grid>                                                                                         
+                </Grid>                                                                                                    
             </Grid>
         </XForm>
     );
