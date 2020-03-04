@@ -23,20 +23,13 @@ const Filter = ({onFilter,loading}: IProps) => {
         validateOnBlur
         render={({submitForm, isSubmitting}) => (
             <Form>
+                Filters
                 <Grid spacing={0} container>
                     <Grid item xs={12}>
                         <XTextInput
                             name="query"
                             label="Name"
                             type="text"
-                            variant='outlined'
-                        />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <XSelectInput
-                            name="contactType"
-                            label="Contact Type"
-                            options={toOptions(['Company', 'Person'])}
                             variant='outlined'
                         />
                     </Grid>
@@ -52,14 +45,6 @@ const Filter = ({onFilter,loading}: IProps) => {
                         <XTextInput
                             name="phone"
                             label="Phone"
-                            type="text"
-                            variant='outlined'
-                        />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <XTextInput
-                            name="nin"
-                            label="NIN"
                             type="text"
                             variant='outlined'
                         />

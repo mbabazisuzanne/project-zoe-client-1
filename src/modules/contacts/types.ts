@@ -297,6 +297,7 @@ export const getEmail = (data: IContact): string => {
     return "";
 };
 
+
 export const getEmailObj = (data: IContact): IEmail => {
     const {emails} = data
     if (emails && emails.length > 0) {
@@ -307,6 +308,8 @@ export const getEmailObj = (data: IContact): IEmail => {
     }
     return {} as IEmail;
 };
+
+ 
 
 export const getNinObj = (data: IContact): IIdentification => {
     const {identifications} = data
