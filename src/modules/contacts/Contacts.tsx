@@ -55,7 +55,7 @@ const headCells: XHeadCell[] = [
     {name: 'id', label: 'Name', render: (value, rec) => <ContactLink id={value} name={renderName(rec.person)}/>},
     {name: 'email', label: 'Email', render: (_, rec) => <EmailLink value={getEmail(rec)}/>},
     {name: 'phone', label: 'Phone', render: (_, rec) => getPhone(rec)},
-    {name: 'age', label: 'Age Group', render: (_, rec) => rec.person.age},
+    {name: 'age', label: 'Age Group', render: (_, rec) => rec.person.ageGroup},
 ];
 
 const toMobileRow = (data: IContact): IMobileRow => {
